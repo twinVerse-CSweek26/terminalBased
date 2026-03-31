@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrypticVerse — Level 7 | Terminal Access</title>
+    <meta name="description"
+        content="Level 7 of CrypticVerse CSWeek challenge. Hack the terminal to unlock the secret code." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Boot sequence overlay -->
+    <div id="boot-overlay">
+        <div class="boot-content">
+            <div class="boot-logo">⟁ CRYPTICVERSE OS v7.0.1</div>
+            <div class="boot-lines" id="boot-lines"></div>
+            <div class="boot-progress-wrapper">
+                <div class="boot-progress-bar" id="boot-progress"></div>
+            </div>
+            <div class="boot-status" id="boot-status">Initializing kernel...</div>
+        </div>
+    </div>
+
+    <!-- Main terminal interface -->
+    <div id="terminal-wrapper" class="hidden">
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">crypticverse@level7:~</div>
+            <div class="terminal-status" id="status-indicator">
+                <span class="status-dot"></span> LOCKED
+            </div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+            <div id="output"></div>
+            <div class="input-line" id="input-line">
+                <span class="prompt">guest@crypticverse:~$ </span>
+                <input type="text" id="cmd-input" autofocus autocomplete="off" spellcheck="false" />
+                <span class="cursor-blink">█</span>
+            </div>
+        </div>
+        <!-- Scanline effect -->
+        <div class="scanlines"></div>
+    </div>
+
+    <!-- Access granted overlay -->
+    <div id="access-overlay" class="hidden">
+        <div class="access-content">
+            <div class="access-icon">🔓</div>
+            <h1 class="access-title glitch" data-text="ACCESS GRANTED">ACCESS GRANTED</h1>
+            <div class="secret-code-wrapper">
+                <div class="secret-label">SECRET FINAL CODE</div>
+                <div class="secret-code" id="secret-code"></div>
+            </div>
+            <p class="access-instruction">Submit this code in the final Google Form to complete the challenge.</p>
+            <div class="access-particles" id="access-particles"></div>
+        </div>
+    </div>
+
+    <script src="terminal.js"></script>
+</body>
+
+</html>
